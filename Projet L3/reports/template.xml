@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="event.event_registration_report_template_badge">
+        <t t-call="web.basic_layout">
+            <link href="/event_qr_code/static/src/css/coupon.css" rel="stylesheet" type="text/css" />
+            
+            <t t-foreach="docs" t-as="o">
+                <div id="ticket_body" class="border col-12 mx-0 p-0 row">
+                    <div class="col-8 row m-0 p-3 left-side">
+                        <div id="details" class="w-100 m-auto text-center position-relative">
+                            <div class="decor w-100 top position-absolute bg-dark p-2 m-auto text-center">
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                            </div>                                      
+                            <h1 class="m-auto text-center mx-3" t-field="o.event_id.name"/>
+                            <div class="m-auto text-center">
+                                <span>Du</span>
+                                <span itemprop="startDate" t-field="o.event_id.with_context(tz=o.event_id.date_tz).date_begin" t-options='{"hide_seconds": True}'></span>
+                                <span> au </span>
+                                <span itemprop="endDate" t-field="o.event_id.with_context(tz=o.event_id.date_tz).date_end" t-options='{"hide_seconds": True}'></span>
+                            </div>
+                            <div class="decor w-100 bottom position-absolute bg-dark p-2 m-auto text-center">
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                                <i class="fa fa-star m-auto"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 p-0 right-side">
+                        <div id="code" class="w-100 p-3" t-field="o.qr_code" t-options="{'widget': 'image'}" />
+                        <h3 class="mx-auto text-center">QR CODE</h3>
+                        <div id="o_event_name" class="d-none" />
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="event.report_event_registration_badge" model="ir.actions.report">
+        <field name="paperformat_id" ref="event_qr_code.paperformat_event_ticket" />
+    </record>
+
+</odoo>

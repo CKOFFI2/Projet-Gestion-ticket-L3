@@ -1,0 +1,127 @@
+#check_notif .modal-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check-details{
+    display: flex;
+}
+
+
+.swal-button--confirm {
+    background: linear-gradient(rgb(12, 44, 57), rgb(17, 60, 78));
+}
+
+#workplace_dashboard button:hover {
+    background-color: darkgray;
+}
+
+#addImgModal .avatar-upload {
+    /* width: 320px;
+    height: 240px; */
+    position: relative;
+    margin: 50px auto;
+}
+
+#addImgModal .avatar-upload .avatar-edit {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+}
+
+#addImgModal .avatar-upload .avatar-edit.pen {
+    right: 4px;
+}
+
+#addImgModal .avatar-upload .avatar-edit.cam {
+    right: 45px;
+}
+
+#addImgModal .avatar-upload .avatar-edit input {
+    display: none;
+}
+
+#addImgModal .avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+#addImgModal .avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+#addImgModal .avatar-upload .avatar-edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+#addImgModal .avatar-upload .avatar-edit.pen input + label:after {
+    content: "\f040";
+}
+
+#addImgModal .avatar-upload .avatar-edit.cam input + label:after {
+    content: "\f030";
+}
+
+#addImgModal .avatar-upload .avatar-preview {
+    position: relative;
+    /* border: 6px solid #F8F8F8; */
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+#addImgModal .avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#addImgModal .container2 .btn {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    
+      color: white;
+      font-size: 16px;
+  
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+}
+
+#addImgModal video {
+    margin: auto;
+    display: block;
+}
+
+#addImgModal #imageUploadCamCapture {
+    width: 4em;
+    height: 4em;
+    border: 4px solid lightgray;
+    border-radius: 100%;
+    box-shadow: 0px 2px 4px 0px rgb(104 104 104 / 35%);
+    background-color: slategrey;
+}
+  

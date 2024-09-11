@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_event_registration_form_inherited">
+            <field name="name">event.registration.form.view.inherited</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <field name="code" />
+                    <field name="qr_code" />
+                    <field name="ticket_file" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

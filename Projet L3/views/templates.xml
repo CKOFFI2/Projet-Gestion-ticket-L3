@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Event -->
+    <template id="website_event_layout" inherit_id="website_event.layout" name="Event">
+        <xpath expr="//nav[hasclass('d-print-none')]//a[hasclass('navbar-brand')]" position="after">
+            <button class="px-3 py-1 btn-primary" data-toggle="modal" data-target="#ScanModal" id="scan_turnstile">
+                <i class="fas fa-qrcode"/>
+                <span class="pl-2">
+                    <b>Scanneur</b>
+                </span>
+            </button>
+        </xpath>
+        <xpath expr="//div[@id='wrap']" position="after">
+            <input type="hidden" name="event_id" id="eventId" t-att-value="event.id"/>
+            <div id="ScanModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered h-100 my-0" id="fail_scan">
+                    <div class="modal-content">
+                        <!-- Modal body -->
+                        <div class="d-flex justify-content-center modal-body">
+                            <div id="reading" style="width: 300px;"></div>
+                            <div id="qr-reading-results"></div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="scan_stop">Retour</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="scanResult" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered h-100 my-0">
+                    <div class="modal-content col-md-8 m-auto">
+                        <div id="loading-indicator" style="display:none" />
+                        <div class="choose_driverpopup">
+                            <div class="modal-header flex-column">
+                                <h3 class="m-auto modal-title" id="resultText"></h3>
+                            </div>
+                            <div class="modal-body check-details">
+                                <div class="m-auto text-center col-7" id="resultIcon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="assets" inherit_id="website.assets_frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/event_qr_code/static/src/css/styles.css"/>
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.1.0/html5-qrcode.min.js"></script>
+            <script type="text/javascript" src="/hr_attendance_face_recognition/static/src/js/lib/webcam.js"></script>
+            <script type="text/javascript" src="/event_qr_code/static/src/js/script.js"/>
+        </xpath>
+    </template>
+
+</odoo>
